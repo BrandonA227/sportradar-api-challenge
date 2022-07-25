@@ -9,20 +9,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form>
+    <header>
       <ul class="type-selector">
         <li class="active">Player</li>
         <li>Team</li>
       </ul>
-      <div class="id-container">
-        <label for="id-input">Player ID</label>
-        <input type="text" id="id-input" />
-      </div>
-      <div class="year-container">
-        <label for="season-year">Season Year</label>
-        <input type="text" id="season-year" />
-      </div>
-      <button type="button" class="download-csv-btn">Download CSV</button>
-    </form>
+    </header>
+    <main>
+      <form class="input-form">
+        <div class="input-container">
+          <div class="id-container">
+            <label for="id-input">Player ID</label>
+            <input type="text" id="id-input" />
+          </div>
+          <div class="year-container">
+            <label for="season-year">Season Year</label>
+            <input type="text" id="season-year" />
+          </div>
+        </div>
+        <button type="button" class="download-csv-btn">Download CSV</button>
+      </form>
+    </main>
   </body>
 </html>
