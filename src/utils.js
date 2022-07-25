@@ -9,10 +9,11 @@ async function getRequest(url) {
       throw res;
     }
   } catch (error) {
-    return error;
+    return error.statusText;
   }
 }
 
 module.exports = {
   getRequest,
+  convertJsonToCsv,
 };
