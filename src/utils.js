@@ -13,6 +13,15 @@ async function getRequest(url) {
   }
 }
 
+function convertJsonToCsv(obj) {
+  const header = Object.keys(obj);
+  const csv = [
+    header.join(","),
+    header.map((fieldName) => JSON.stringify(obj[fieldName])).join(","),
+  ].join("\r\n");
+  return csv;
+}
+
 module.exports = {
   getRequest,
   convertJsonToCsv,

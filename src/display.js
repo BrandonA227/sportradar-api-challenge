@@ -55,8 +55,8 @@ import { convertJsonToCsv } from "./utils";
         filteredData.losses = teamData.stat.losses;
         filteredData.points = teamData.stat.pts;
         filteredData.goalsPerGame = teamData.stat.goalsPerGame;
-        filteredData.firstGameOfSeasonDate = firstGameData.date;
-        filteredData.firstGameOfSeasonOpponet =
+        filteredData.firstGameDate = firstGameData.date;
+        filteredData.firstGameOpponetName =
           firstGameData.games[0].teams.away.team.id !== id
             ? firstGameData.games[0].teams.away.team.name
             : firstGameData.games[0].teams.home.team.name;
@@ -66,12 +66,27 @@ import { convertJsonToCsv } from "./utils";
     return filteredData;
   };
 
+  const download = (filename, text) => {
+    let element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", filename);
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  };
+
   const downloadCSV = async () => {
     const data = await getAndFilterNhlData(
       idInput.value,
       seasonYearInput.value
     );
     if (data && typeof data[0] !== "string") {
+      const csvData = convertJsonToCsv(data);
+      download("nhl_data.csv", csvData);
     }
   };
 
