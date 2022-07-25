@@ -4,3 +4,17 @@
   margin: 0;
   font-size: 10px;
 }
+
+.type-selector {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li.active {
+  text-decoration: underline;
+}
