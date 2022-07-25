@@ -14,4 +14,16 @@ export default class NHL {
     const fullUrl = NHL.#NHL_API_URL + PLAYER_URL;
     return getRequest(fullUrl);
   }
+
+  static getTeamSeasonStats(id, year) {
+    const TEAM_URL = `teams/${id}?expand=team.stats&season=${year}`;
+    const fullUrl = NHL.#NHL_API_URL + TEAM_URL;
+    return getRequest(fullUrl);
+  }
+
+  static getTeamGamesPlayed(id, year) {
+    const TEAM_URL = `schedule?season=${year}&teamId=${id}&gameType=R`;
+    const fullUrl = NHL.#NHL_API_URL + TEAM_URL;
+    return getRequest(fullUrl);
+  }
 }

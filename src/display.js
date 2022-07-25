@@ -1,13 +1,13 @@
 import NHL from "./nhl";
 
 (() => {
-  const playerIdInput = document.getElementById("player-id");
+  const idInput = document.getElementById("id-input");
   const seasonYearInput = document.getElementById("season-year");
   const submitBtn = document.querySelector(".download-csv-btn");
 
   const downloadCSV = async () => {
     console.log(
-      await NHL.getPlayerSeasonData(playerIdInput.value, seasonYearInput.value)
+      await NHL.getTeamGamesPlayed(idInput.value, seasonYearInput.value)
     );
   };
 
