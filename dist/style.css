@@ -16,6 +16,19 @@ body {
   gap: 20rem;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.error-message {
+  font-size: 2rem;
+  color: #af0606;
+}
+
 label {
   font-size: 2rem;
 }
@@ -36,7 +49,7 @@ label {
   gap: 2rem;
 }
 
-input[type="text"] {
+input[type="number"] {
   border-radius: 99rem;
   border: 0;
   background-color: aliceblue;

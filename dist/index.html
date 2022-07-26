@@ -16,19 +16,32 @@
       </ul>
     </header>
     <main>
-      <form class="input-form">
+      <form class="input-form" novalidate>
         <div class="input-container">
           <div class="id-container">
             <label for="id-input">Player ID</label>
-            <input type="text" id="id-input" />
+            <input
+              type="number"
+              id="id-input"
+              maxlength="15"
+              required
+              placeholder="ID Number"
+            />
           </div>
           <div class="year-container">
             <label for="season-year">Season Year</label>
-            <input type="text" id="season-year" />
+            <input
+              type="number"
+              id="season-year"
+              required
+              maxlength="8"
+              placeholder="Season Year"
+            />
           </div>
         </div>
         <button type="button" class="download-csv-btn">Download CSV</button>
       </form>
+      <div class="error-message"></div>
     </main>
   </body>
 </html>
