@@ -110,7 +110,7 @@ import { convertJsonToCsv } from "./utils";
       filteredData.goalsPerGame = teamData.stat.goalsPerGame;
       filteredData.firstGameDate = firstGameData.date;
       filteredData.firstGameOpponetName =
-        firstGameData.games[0].teams.away.team.id !== id
+        firstGameData.games[0].teams.away.team.id !== idType
           ? firstGameData.games[0].teams.away.team.name
           : firstGameData.games[0].teams.home.team.name;
     }
