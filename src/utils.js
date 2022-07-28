@@ -1,8 +1,6 @@
 async function getRequest(url) {
   try {
-    const res = await fetch(url, { mode: "cors" }).catch((err) => {
-      return err;
-    });
+    const res = await fetch(url, { mode: "cors" });
     if (res.status >= 200 && res.status <= 299) {
       return res.json();
     } else {
@@ -19,6 +17,7 @@ function convertJsonToCsv(obj) {
     header.join(","),
     header.map((fieldName) => JSON.stringify(obj[fieldName])).join(","),
   ].join("\r\n");
+  console.log(csv);
   return csv;
 }
 
