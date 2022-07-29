@@ -12,4 +12,4 @@ OR
 - Team ID: 1
 - Season Year: 20182019
 
-Demo:
+Here is a link to the [Demo](https://brandona227.github.io/sportradar-api-challenge/).
